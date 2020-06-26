@@ -1,12 +1,17 @@
-import { WebPlugin } from '@capacitor/core';
-import { CapacitorIOSAppTrackingPlugin } from './definitions';
-export declare class CapacitorIOSAppTrackingWeb extends WebPlugin implements CapacitorIOSAppTrackingPlugin {
+import { WebPlugin } from "@capacitor/core";
+import { IOSAppTrackingPlugin } from "./definitions";
+export declare class IOSAppTrackingWeb extends WebPlugin implements IOSAppTrackingPlugin {
     constructor();
+    getTrackingStatus({ tracking, }: {
+        tracking: string;
+    }): Promise<{
+        value: string;
+    }>;
     requestPermission(options: {
         value: string;
     }): Promise<{
         value: string;
     }>;
 }
-declare const CapacitorIOSAppTracking: CapacitorIOSAppTrackingWeb;
-export { CapacitorIOSAppTracking };
+declare const IOSAppTracking: IOSAppTrackingWeb;
+export { IOSAppTracking };

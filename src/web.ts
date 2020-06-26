@@ -1,23 +1,34 @@
-import { WebPlugin } from '@capacitor/core';
-import { CapacitorIOSAppTrackingPlugin } from './definitions';
+import { WebPlugin } from "@capacitor/core";
+import { IOSAppTrackingPlugin } from "./definitions";
 
-export class CapacitorIOSAppTrackingWeb extends WebPlugin implements CapacitorIOSAppTrackingPlugin {
+export class IOSAppTrackingWeb extends WebPlugin
+  implements IOSAppTrackingPlugin {
   constructor() {
     super({
-      name: 'CapacitorIOSAppTracking',
-      platforms: ['web']
+      name: "IOSAppTracking",
+      platforms: ["web"],
     });
   }
 
-  async requestPermission(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
+  async getTrackingStatus({
+    tracking,
+  }: {
+    tracking: string;
+  }): Promise<{ value: string }> {
+    console.log("ECHO", tracking);
+    return { value: tracking };
+  }
+  async requestPermission(options: {
+    value: string;
+  }): Promise<{ value: string }> {
+    console.log("ECHO", options);
     return options;
   }
 }
 
-const CapacitorIOSAppTracking = new CapacitorIOSAppTrackingWeb();
+const IOSAppTracking = new IOSAppTrackingWeb();
 
-export { CapacitorIOSAppTracking };
+export { IOSAppTracking };
 
-import { registerWebPlugin } from '@capacitor/core';
-registerWebPlugin(CapacitorIOSAppTracking);
+import { registerWebPlugin } from "@capacitor/core";
+registerWebPlugin(IOSAppTracking);

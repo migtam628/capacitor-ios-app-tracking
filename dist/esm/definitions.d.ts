@@ -1,9 +1,14 @@
 declare module "@capacitor/core" {
     interface PluginRegistry {
-        CapacitorIOSAppTracking: CapacitorIOSAppTrackingPlugin;
+        IOSAppTracking: IOSAppTrackingPlugin;
     }
 }
-export interface CapacitorIOSAppTrackingPlugin {
+export interface IOSAppTrackingPlugin {
+    getTrackingStatus(options: {
+        tracking: string;
+    }): Promise<{
+        value: string;
+    }>;
     requestPermission(options: {
         value: string;
     }): Promise<{

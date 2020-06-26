@@ -7,23 +7,29 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { WebPlugin } from '@capacitor/core';
-export class CapacitorIOSAppTrackingWeb extends WebPlugin {
+import { WebPlugin } from "@capacitor/core";
+export class IOSAppTrackingWeb extends WebPlugin {
     constructor() {
         super({
-            name: 'CapacitorIOSAppTracking',
-            platforms: ['web']
+            name: "IOSAppTracking",
+            platforms: ["web"],
+        });
+    }
+    getTrackingStatus({ tracking, }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log("ECHO", tracking);
+            return { value: tracking };
         });
     }
     requestPermission(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('ECHO', options);
+            console.log("ECHO", options);
             return options;
         });
     }
 }
-const CapacitorIOSAppTracking = new CapacitorIOSAppTrackingWeb();
-export { CapacitorIOSAppTracking };
-import { registerWebPlugin } from '@capacitor/core';
-registerWebPlugin(CapacitorIOSAppTracking);
+const IOSAppTracking = new IOSAppTrackingWeb();
+export { IOSAppTracking };
+import { registerWebPlugin } from "@capacitor/core";
+registerWebPlugin(IOSAppTracking);
 //# sourceMappingURL=web.js.map
