@@ -11,21 +11,23 @@ import AppTrackingTransparency
 public class IOSAppTracking: CAPPlugin {
     
     @objc func getTrackingStatus(_ call: CAPPluginCall) {
-        var tracking = call.getBool("tracking")
+//        var tracking = call.getBool("tracking"
+        let status : ATTrackingManager.AuthorizationStatus = ATTrackingManager.trackingAuthorizationStatus
         call.success([
-            "value": ATTrackingManager.trackingAuthorizationStatus
+            "value": status.rawValue == 0 ? "Not Asked" : status.rawValue == 1 ? "restricted" : status.rawValue == 2 ? "denied" : status.rawValue == 3 ? "authorized" : ""
         ])
+        
     }
 
     @objc func requestPermission(_ call: CAPPluginCall) {
-//       let status = ATTrackingManager.trackingAuthorizationStatus
-        var value: ATTrackingManager.AuthorizationStatus!
+        var value: ATTrackingManager.AuthorizationStatus = ATTrackingManager.trackingAuthorizationStatus
         ATTrackingManager.requestTrackingAuthorization { (res) in
-           value = res;
-       }
+            value = res
+        }
         call.success([
-            "value": value
+            "value": value.rawValue == 0 ? "Not Asked" : value.rawValue == 1 ? "restricted" : value.rawValue == 2 ? "denied" : value.rawValue == 3 ? "authorized" : ""
         ])
+        
      }
 
 }
