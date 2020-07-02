@@ -13,12 +13,12 @@ Capacitor-iOS-App-Tracking is a native AppTrackingTransparency implementation fo
 - [x] iOS
 - [ ] Android
 
-
+<!--
 ## Other Plugins:
 | Plugins                                             | Android | iOS | Electron | PWA |
 | :-------------------------------------------------- | :------ | :-- | :------- | :-- |
 | [AdMob Native](https://github.com/migtam628/capacitor-admob-native) | ✅      |✅  | ❌       | ❌  |
-
+-->
 
 
 ## Installation
