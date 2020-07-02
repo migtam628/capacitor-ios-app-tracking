@@ -1,13 +1,13 @@
 
 # [Capacitor-iOS-App-Tracking](https://github.com/migtam628/capacitor-ios-app-tracking) 
 
-Capacitor-iOS-App-Tracking is a native AppTrackingTransparency implementation for IOS. Now you can use this package as a [Ionic Capacitor](https://capacitor.ionicframework.com) Plugin in your App.
+Capacitor-iOS-App-Tracking is a native AppTrackingTransparency implementation for iOS 14. Now you can use this package as a [Ionic Capacitor](https://capacitor.ionicframework.com) Plugin in your App.
 
 
 ## Release Note:
 
 ### v0.0.7
-- Implemented AppTrackingTransparency.
+- Implemented iOS 14 AppTrackingTransparency.
 
 ## Supported Platform:
 - [x] iOS
