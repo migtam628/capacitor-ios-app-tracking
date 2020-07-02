@@ -3,6 +3,16 @@
 
 Capacitor-iOS-App-Tracking is a native AppTrackingTransparency implementation for iOS 14. Now you can use this package as a [Ionic Capacitor](https://capacitor.ionicframework.com) Plugin in your App.
 
+<!-- Badges -->
+<a href="https://npmjs.com/package/capacitor-ios-app-tracking">
+  <img src="https://badgen.net/npm/v/capacitor-ios-app-tracking">
+</a>
+<a href="https://npmjs.com/package/@capacitor-community/apple-sign-in">
+  <img src="https://badgen.net/npm/dt/capacitor-ios-app-tracking">
+</a>
+<a href="https://npmjs.com/package/@capacitor-community/apple-sign-in">
+  <img src="https://badgen.net/npm/license/capacitor-ios-app-tracking">
+</a>
 
 ## Release Note:
 
@@ -12,6 +22,7 @@ Capacitor-iOS-App-Tracking is a native AppTrackingTransparency implementation fo
 ## Supported Platform:
 - [x] iOS
 - [ ] Android
+
 
 <!--
 ## Other Plugins:
