@@ -19,7 +19,11 @@ Capacitor-iOS-App-Tracking is a native AppTrackingTransparency implementation fo
 | :-------------------------------------------------- | :------ | :-- | :------- | :-- |
 | [AdMob Native](https://github.com/migtam628/capacitor-admob-native) | ✅      |✅  | ❌       | ❌  |
 -->
-
+## Supported methods
+| Name              |
+| :---------------- |
+| getTrackingStatus |
+| requestPermission |  
 
 ## Installation
 
@@ -43,7 +47,7 @@ Open your **App/App/Info.plist** file and add this `plist value` line at the rig
 
 ````
 
-## 📌 Example
+## Usage
 
 ```typescript
 import React, { useEffect } from "react"
