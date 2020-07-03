@@ -22,6 +22,11 @@ Capacitor-iOS-App-Tracking is a native AppTrackingTransparency implementation fo
 ## Supported Platform:
 - [x] iOS
 
+### Screenshots
+|  | Banner | Interstitial | Reward |
+|:-----------------|:------------------:|:------------------:|:------------------:|
+| **iOS** | ![](https://iwatchfreetv.live/IMG_2748.PNG) | ![](https://iwatchfreetv.live/IMG_2749.PNG) | ![](https://iwatchfreetv.live/IMG_2750.PNG) 
+
 
 <!--
 ## Other Plugins:
