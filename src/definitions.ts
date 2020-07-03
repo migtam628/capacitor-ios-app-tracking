@@ -12,3 +12,10 @@ export interface IOSAppTrackingPlugin {
     value: string;
   }): Promise<{ value: string; status: string }>;
 }
+
+export interface Response {
+  value: string;
+  status: Status;
+}
+
+export type Status = 'authorized' | 'denied' | 'unrequested' | 'restricted' 

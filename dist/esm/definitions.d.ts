@@ -17,3 +17,8 @@ export interface IOSAppTrackingPlugin {
         status: string;
     }>;
 }
+export interface Response {
+    value: string;
+    status: Status;
+}
+export declare type Status = 'authorized' | 'denied' | 'unrequested' | 'restricted';

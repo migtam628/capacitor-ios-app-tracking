@@ -16,12 +16,11 @@ Capacitor-iOS-App-Tracking is a native AppTrackingTransparency implementation fo
 
 ## Release Note:
 
-### v0.0.7
+### v0.1.1
 - Implemented iOS 14 AppTrackingTransparency.
 
 ## Supported Platform:
 - [x] iOS
-- [ ] Android
 
 
 <!--
@@ -30,6 +29,9 @@ Capacitor-iOS-App-Tracking is a native AppTrackingTransparency implementation fo
 | :-------------------------------------------------- | :------ | :-- | :------- | :-- |
 | [AdMob Native](https://github.com/migtam628/capacitor-admob-native) | ✅      |✅  | ❌       | ❌  |
 -->
+
+
+
 ## Supported methods
 | Name              |
 | :---------------- |
@@ -42,6 +44,7 @@ Use **Capacitor-iOS-App-Tracking** plugins in your app.
 
 ```console
  npm install --save capacitor-ios-app-tracking
+ ionic cap update
 ```
 
 ## iOS
@@ -51,18 +54,16 @@ Use **Capacitor-iOS-App-Tracking** plugins in your app.
 Open your **App/App/Info.plist** file and add this `plist value` line at the right spot (and replace the value with the message for the user!):
 
 ````xml
-
 <key>NSUserTrackingUsageDescription</key>
 <!-- replace this value with your message-->
 <string>Message to Users.</string>
-
 ````
 
-## Usage
-
+## Example
 ```typescript
 import React, { useEffect } from "react"
 import { Plugins } from "@capacitor/core";
+import { Response } from 'capacitor-ios-app-tracking'
 
 const { IOSAppTracking } = Plugins;
 
@@ -75,35 +76,32 @@ const App: React.FC = () => {
   
   useEffect(() => {
     if(response.status === 'unrequested') {
-      IOSAppTracking.requestPermission().then((status: Status) => console.log(status))
+      IOSAppTracking.requestPermission().then((res: Response) => console.log(res))
     }
   }, [response])
  
  ...
 }
-
+```
+### getTrackingStatus()
+```typescript
+IOSAppTracking.getTrackingStatus().then((res: Response ) => console.log(res))
+```
+### requestPermission()
+```typescript
+IOSAppTracking.requestPermission().then((res: Response) => console.log(res))
+```
+### Response
+```typescript
 interface Response {
   value: string;
   status: Status;
 }
-
-type Status = 'authorized' | 'denied' | 'unrequested' | 'restricted' 
-
-
 ```
-
-
-## Contributing
-
-- 🌟 Star this repository
-- 📋 Open issue for feature requests
-
-
-## Roadmap
-
-- [Capacitor Plugins](https://capacitor.ionicframework.com/docs/plugins/)
-
-- [IOS](https://capacitor.ionicframework.com/docs/plugins/ios/)
+### Status
+```typescript
+type Status = 'authorized' | 'denied' | 'unrequested' | 'restricted' 
+```
 
 
 ## License
