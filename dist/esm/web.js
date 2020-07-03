@@ -15,14 +15,14 @@ export class IOSAppTrackingWeb extends WebPlugin {
             platforms: ["web"],
         });
     }
-    getTrackingStatus({ tracking, }) {
+    getTrackingStatus({ value, }) {
         return __awaiter(this, void 0, void 0, function* () {
-            return { value: tracking, status: status };
+            return { value: value, status: status };
         });
     }
-    requestPermission(options) {
+    requestPermission({ value, }) {
         return __awaiter(this, void 0, void 0, function* () {
-            return options;
+            return { value: value, status: status };
         });
     }
 }

@@ -11,18 +11,19 @@ export class IOSAppTrackingWeb extends WebPlugin
   }
 
   async getTrackingStatus({
-    tracking,
+    value,
   }: {
-    tracking: string;
-  }): Promise<{ value: string, status: string }> {
-
-    return { value: tracking, status: status };
-  }
-  async requestPermission(options: {
     value: string;
-  }): Promise<{ value: string }> {
+  }): Promise<{ value: string; status: string }> {
+    return { value: value, status: status };
+  }
 
-    return options;
+  async requestPermission({
+    value,
+  }: {
+    value: string;
+  }): Promise<{ value: string; status: string }> {
+    return { value: value, status: status };
   }
 }
 

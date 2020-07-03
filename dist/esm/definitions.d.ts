@@ -5,7 +5,7 @@ declare module "@capacitor/core" {
 }
 export interface IOSAppTrackingPlugin {
     getTrackingStatus(options: {
-        tracking: string;
+        value: string;
     }): Promise<{
         value: string;
         status: string;
@@ -14,5 +14,6 @@ export interface IOSAppTrackingPlugin {
         value: string;
     }): Promise<{
         value: string;
+        status: string;
     }>;
 }
