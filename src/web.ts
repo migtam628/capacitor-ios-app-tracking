@@ -14,14 +14,14 @@ export class IOSAppTrackingWeb extends WebPlugin
     tracking,
   }: {
     tracking: string;
-  }): Promise<{ value: string }> {
-    console.log("ECHO", tracking);
-    return { value: tracking };
+  }): Promise<{ value: string, status: string }> {
+
+    return { value: tracking, status: status };
   }
   async requestPermission(options: {
     value: string;
   }): Promise<{ value: string }> {
-    console.log("ECHO", options);
+
     return options;
   }
 }

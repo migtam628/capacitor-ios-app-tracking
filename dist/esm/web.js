@@ -17,13 +17,11 @@ export class IOSAppTrackingWeb extends WebPlugin {
     }
     getTrackingStatus({ tracking, }) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log("ECHO", tracking);
-            return { value: tracking };
+            return { value: tracking, status: status };
         });
     }
     requestPermission(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log("ECHO", options);
             return options;
         });
     }

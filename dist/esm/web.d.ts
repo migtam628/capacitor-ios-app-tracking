@@ -6,6 +6,7 @@ export declare class IOSAppTrackingWeb extends WebPlugin implements IOSAppTracki
         tracking: string;
     }): Promise<{
         value: string;
+        status: string;
     }>;
     requestPermission(options: {
         value: string;
