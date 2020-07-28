@@ -1,7 +1,7 @@
 
-# [Capacitor-iOS-App-Tracking](https://github.com/migtam628/capacitor-ios-app-tracking) 
+# [Capacitor-iOS-IDFA-App-Tracking](https://github.com/migtam628/capacitor-ios-app-tracking) 
 
-Capacitor-iOS-App-Tracking is a native AppTrackingTransparency implementation for iOS 14. Now you can use this package as a [Ionic Capacitor](https://capacitor.ionicframework.com) Plugin in your App.
+Capacitor-IDFA-iOS-App-Tracking is a native AppTrackingTransparency implementation for iOS 14. Now you can use this package as a [Ionic Capacitor](https://capacitor.ionicframework.com) Plugin in your App.
 
 <!-- Badges -->
 <a href="https://npmjs.com/package/capacitor-ios-app-tracking">
@@ -17,7 +17,7 @@ Capacitor-iOS-App-Tracking is a native AppTrackingTransparency implementation fo
 ## Release Note:
 
 ### v0.1.1
-- Implemented iOS 14 AppTrackingTransparency.
+- Implemented iOS 14 IDFA AppTrackingTransparency.
 
 ## Supported Platform:
 - [x] iOS
@@ -45,7 +45,7 @@ Capacitor-iOS-App-Tracking is a native AppTrackingTransparency implementation fo
 
 ## Installation
 
-Use **Capacitor-iOS-App-Tracking** plugins in your app.
+Use **Capacitor-IDFA-iOS-App-Tracking** plugins in your app.
 
 ```console
  npm install --save capacitor-ios-app-tracking
@@ -111,5 +111,5 @@ type Status = 'authorized' | 'denied' | 'unrequested' | 'restricted'
 
 ## License
 
-Capacitor-iOS-App-Tracking is MIT licensed.
+Capacitor-IDFA-iOS-App-Tracking is MIT licensed.
 
