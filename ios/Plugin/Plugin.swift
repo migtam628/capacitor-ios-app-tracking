@@ -6,29 +6,34 @@ import AdSupport
  * Please read the Capacitor iOS Plugin Development Guide
  * here: https://capacitor.ionicframework.com/docs/plugins/ios
  */
-@available(iOS 14, *)
 @objc(IOSAppTracking)
 public class IOSAppTracking: CAPPlugin {
-    
+
     @objc func getTrackingStatus(_ call: CAPPluginCall) {
         let advertising = ASIdentifierManager.init().advertisingIdentifier.uuidString
-        let status : ATTrackingManager.AuthorizationStatus = ATTrackingManager.trackingAuthorizationStatus
-        call.success([
-            "value": advertising, "status": status.rawValue == 0 ? "unrequested" : status.rawValue == 1 ? "restricted" : status.rawValue == 2 ? "denied" : status.rawValue == 3 ? "authorized" : ""
-        ])
-        
+        if #available(iOS 14.0, *) {
+            let status : ATTrackingManager.AuthorizationStatus = ATTrackingManager.trackingAuthorizationStatus
+            call.success([
+                "value": advertising, "status": status.rawValue == 0 ? "unrequested" : status.rawValue == 1 ? "restricted" : status.rawValue == 2 ? "denied" : status.rawValue == 3 ? "authorized" : ""
+            ])
+        } else {
+            call.success([ "value": advertising, "status": "authorized" ])
+        }
     }
 
     @objc func requestPermission(_ call: CAPPluginCall) {
-        let advertising = ASIdentifierManager.init().advertisingIdentifier.uuidString
-        var status: ATTrackingManager.AuthorizationStatus = ATTrackingManager.trackingAuthorizationStatus
-        ATTrackingManager.requestTrackingAuthorization { (res) in
-            status = res
+        if #available(iOS 14.0, *) {
+            ATTrackingManager.requestTrackingAuthorization { (res) in
+                let advertising = ASIdentifierManager.init().advertisingIdentifier.uuidString
+                let status = res
+                call.success([
+                    "value": advertising, "status": status.rawValue == 0 ? "unrequested" : status.rawValue == 1 ? "restricted" : status.rawValue == 2 ? "denied" : status.rawValue == 3 ? "authorized" : ""
+                ])
+            }
+        } else {
+            let advertising = ASIdentifierManager.init().advertisingIdentifier.uuidString
+            call.success([ "value": advertising, "status": "authorized" ])
         }
-        call.success([
-            "value": advertising, "status": status.rawValue == 0 ? "unrequested" : status.rawValue == 1 ? "restricted" : status.rawValue == 2 ? "denied" : status.rawValue == 3 ? "authorized" : ""
-        ])
-        
      }
 
 }
