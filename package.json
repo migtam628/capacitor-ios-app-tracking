@@ -34,7 +34,7 @@
   "capacitor": {
     "ios": {
       "src": "ios"
-    },
+    }
   },
   "repository": {
     "type": "git",
