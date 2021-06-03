@@ -1,4 +1,3 @@
-import "capacitor-udp";
 import { WebPlugin } from "@capacitor/core";
 export class IOSAppTrackingWeb extends WebPlugin {
     constructor() {

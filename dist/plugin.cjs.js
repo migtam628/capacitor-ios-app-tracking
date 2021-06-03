@@ -3,7 +3,6 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var core = require('@capacitor/core');
-require('capacitor-udp');
 
 const AppTrackingTransparency = core.registerPlugin('AppTrackingTransparency', {
     web: () => Promise.resolve().then(function () { return web; }).then(m => new m.IOSAppTrackingWeb()),
