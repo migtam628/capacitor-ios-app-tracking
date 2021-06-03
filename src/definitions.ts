@@ -1,21 +1,13 @@
-declare module "@capacitor/core" {
-  interface PluginRegistry {
-    IOSAppTracking: IOSAppTrackingPlugin;
-  }
-}
-
 export interface IOSAppTrackingPlugin {
-  getTrackingStatus(options: {
-    value: string;
-  }): Promise<{ value: string; status: string }>;
-  requestPermission(options: {
-    value: string;
-  }): Promise<{ value: string; status: string }>;
+  getTrackingStatus(): Promise<IOSAppTrackingResponse>;
+  requestPermission(): Promise<IOSAppTrackingResponse>;
 }
 
-export interface Response {
-  value: string;
-  status: Status;
+export interface IOSAppTrackingResponse {
+  code: string;
+  status: IOSAppTrackingStatus;
 }
 
-export type Status = 'authorized' | 'denied' | 'unrequested' | 'restricted' 
+export type IOSAppTrackingStatus = 'authorized' | 'denied' | 'unrequested' | 'restricted'
+
+
