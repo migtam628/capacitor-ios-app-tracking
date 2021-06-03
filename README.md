@@ -17,6 +17,9 @@
 
 ## Release Note:
 
+### v1.0.3
+- Bug fixes.
+
 ### v1.0.2
 
 - Added Capacitor 3.0 Support.
