@@ -1,19 +1,9 @@
+import "capacitor-udp";
 import { WebPlugin } from "@capacitor/core";
-import { IOSAppTrackingPlugin } from "./definitions";
+import type { IOSAppTrackingPlugin, IOSAppTrackingResponse, IOSAppTrackingStatus } from "./definitions";
 export declare class IOSAppTrackingWeb extends WebPlugin implements IOSAppTrackingPlugin {
     constructor();
-    getTrackingStatus({ value, }: {
-        value: string;
-    }): Promise<{
-        value: string;
-        status: string;
-    }>;
-    requestPermission({ value, }: {
-        value: string;
-    }): Promise<{
-        value: string;
-        status: string;
-    }>;
+    IOSAppTrackingStatus: IOSAppTrackingStatus;
+    getTrackingStatus(): Promise<IOSAppTrackingResponse>;
+    requestPermission(): Promise<IOSAppTrackingResponse>;
 }
-declare const IOSAppTracking: IOSAppTrackingWeb;
-export { IOSAppTracking };
