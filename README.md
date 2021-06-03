@@ -1,4 +1,5 @@
 # iOS-Capacitor-App-Tracking
+
 ### Adds App Tracking Transparency for iOS 14
 
 <br/>
@@ -16,25 +17,28 @@
 
 ## Release Note:
 
-### v1.0.1
+### v1.0.2
+
 - Added Capacitor 3.0 Support.
+
 ### v0.1.1
+
 - iOS 14 App Tracking Transparency.
 
 ## Supported Platform:
+
 - [x] iOS
 - [ ] Android
 - [ ] Web
 
-
 ## Supported methods
+
 | Name              |
 | :---------------- |
 | getTrackingStatus |
-| requestPermission |  
+| requestPermission |
 
 <br/>
-
 
 ## Install
 
@@ -42,6 +46,7 @@
 npm install capacitor-ios-app-tracking
 npx cap sync
 ```
+
 <br/>
 <br/>
 
@@ -64,41 +69,44 @@ npx cap sync
 ### requestPermission(...)
 
 ```typescript
-getTrackingStatus() => Promise<>
-requestPermission() => Promise<>
+getTrackingStatus() => Promise<IOSAppTrackingStatus>
+requestPermission() => Promise<IOSAppTrackingStatus>
 ```
 
-
-| Returns       | Type                            |
-| ------------- | ------------------------------- |
-| **`Promise`** | <code>{ value: string; }</code> |
-| **`Promise`** | <code>{ value: string; }</code> |
-
+| Returns       | Type                              |
+| ------------- | --------------------------------- |
+| **`Promise`** | <code>IOSAppTrackingStatus</code> |
+| **`Promise`** | <code>IOSAppTrackingStatus</code> |
 
 <br/>
 <br/>
 
 - ### interface IOSAppTrackingPlugin
+
 ```typescript
 export interface IOSAppTrackingPlugin {
   getTrackingStatus(): Promise<IOSAppTrackingResponse>;
   requestPermission(): Promise<IOSAppTrackingResponse>;
 }
 ```
+
 <br/>
 <br/>
 
 - ### interface IOSAppTrackingResponse
+
 ```typescript
 interface IOSAppTrackingResponse {
   code: string;
   status: IOSAppTrackingStatus;
 }
 ```
+
 <br/>
 <br/>
 
 - ### type IOSAppTrackingStatus
+
 ```typescript
 type IOSAppTrackingStatus =
   | 'authorized'
@@ -106,7 +114,6 @@ type IOSAppTrackingStatus =
   | 'unrequested'
   | 'restricted';
 ```
-
 
 ---
 
