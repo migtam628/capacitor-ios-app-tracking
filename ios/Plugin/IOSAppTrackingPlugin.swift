@@ -1,6 +1,6 @@
 import Foundation
 
-@objc public class IOSAppTracking: NSObject {
+@objc public class IOSAppTrackingPlugin: NSObject {
 
     @objc public func getTrackingStatus(_ value: String) -> String {
         return value

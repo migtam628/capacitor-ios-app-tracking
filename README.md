@@ -1,7 +1,7 @@
+# iOS-Capacitor-App-Tracking
+### Adds App Tracking Transparency for iOS 14
 
-# [Capacitor-iOS-IDFA-App-Tracking](https://github.com/migtam628/capacitor-ios-app-tracking) 
-
-Capacitor-IDFA-iOS-App-Tracking is a native AppTrackingTransparency implementation for iOS 14. Now you can use this package as a [Ionic Capacitor](https://capacitor.ionicframework.com) Plugin in your App.
+<br/>
 
 <!-- Badges -->
 <a href="https://npmjs.com/package/capacitor-ios-app-tracking">
@@ -16,25 +16,15 @@ Capacitor-IDFA-iOS-App-Tracking is a native AppTrackingTransparency implementati
 
 ## Release Note:
 
+### v1.0.1
+- Added Capacitor 3.0 Support.
 ### v0.1.1
-- Implemented iOS 14 IDFA AppTrackingTransparency.
+- iOS 14 App Tracking Transparency.
 
 ## Supported Platform:
 - [x] iOS
-
-### Screenshots
-|  |  |  |  |
-|:-----------------|:------------------:|:------------------:|:------------------:|
-| **iOS** | ![](https://iwatchfreetv.live/IMG_2748.PNG) | ![](https://iwatchfreetv.live/IMG_2749.PNG) | ![](https://iwatchfreetv.live/IMG_2750.PNG) 
-
-
-<!--
-## Other Plugins:
-| Plugins                                             | Android | iOS | Electron | PWA |
-| :-------------------------------------------------- | :------ | :-- | :------- | :-- |
-| [AdMob Native](https://github.com/migtam628/capacitor-admob-native) | ✅      |✅  | ❌       | ❌  |
--->
-
+- [ ] Android
+- [ ] Web
 
 
 ## Supported methods
@@ -43,73 +33,81 @@ Capacitor-IDFA-iOS-App-Tracking is a native AppTrackingTransparency implementati
 | getTrackingStatus |
 | requestPermission |  
 
-## Installation
+<br/>
 
-Use **Capacitor-IDFA-iOS-App-Tracking** plugins in your app.
 
-```console
- npm install --save capacitor-ios-app-tracking
- ionic cap update
+## Install
+
+```bash
+npm install capacitor-ios-app-tracking
+npx cap sync
+```
+<br/>
+<br/>
+
+## API
+
+<docgen-index>
+
+- [`getTrackingStatus(...)`](#getTrackingStatus)
+- [`requestPermission(...)`](#requestPermission)
+
+</docgen-index>
+
+<docgen-api>
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<br/>
+<br/>
+
+### getTrackingStatus(...)
+
+### requestPermission(...)
+
+```typescript
+getTrackingStatus() => Promise<>
+requestPermission() => Promise<>
 ```
 
-## iOS
 
-### Update **Info.plist**
+| Returns       | Type                            |
+| ------------- | ------------------------------- |
+| **`Promise`** | <code>{ value: string; }</code> |
+| **`Promise`** | <code>{ value: string; }</code> |
 
-Open your **App/App/Info.plist** file and add this `plist value` line at the right spot (and replace the value with the message for the user!):
 
-````xml
-<key>NSUserTrackingUsageDescription</key>
-<!-- replace this value with your message-->
-<string>Message to Users.</string>
-````
+<br/>
+<br/>
 
-## Example
+- ### interface IOSAppTrackingPlugin
 ```typescript
-import React, { useEffect } from "react"
-import { Plugins } from "@capacitor/core";
-import { Response } from 'capacitor-ios-app-tracking'
-
-const { IOSAppTracking } = Plugins;
-
-const App: React.FC = () => {
-  const [ response, setResponse ] = useState<Response>()
-
-  useEffect(() => {
-    IOSAppTracking.getTrackingStatus().then((res: Response ) => setResponse(res))
-  }, [])
-  
-  useEffect(() => {
-    if(response.status === 'unrequested') {
-      IOSAppTracking.requestPermission().then((res: Response) => console.log(res))
-    }
-  }, [response])
- 
- ...
+export interface IOSAppTrackingPlugin {
+  getTrackingStatus(): Promise<IOSAppTrackingResponse>;
+  requestPermission(): Promise<IOSAppTrackingResponse>;
 }
 ```
-### getTrackingStatus()
+<br/>
+<br/>
+
+- ### interface IOSAppTrackingResponse
 ```typescript
-IOSAppTracking.getTrackingStatus().then((res: Response ) => console.log(res))
-```
-### requestPermission()
-```typescript
-IOSAppTracking.requestPermission().then((res: Response) => console.log(res))
-```
-### Response
-```typescript
-interface Response {
-  value: string;
-  status: Status;
+interface IOSAppTrackingResponse {
+  code: string;
+  status: IOSAppTrackingStatus;
 }
 ```
-### Status
+<br/>
+<br/>
+
+- ### type IOSAppTrackingStatus
 ```typescript
-type Status = 'authorized' | 'denied' | 'unrequested' | 'restricted' 
+type IOSAppTrackingStatus =
+  | 'authorized'
+  | 'denied'
+  | 'unrequested'
+  | 'restricted';
 ```
 
 
-## License
+---
 
-Capacitor-IDFA-iOS-App-Tracking is MIT licensed.
-
+</docgen-api>
