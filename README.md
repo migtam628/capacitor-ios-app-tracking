@@ -36,10 +36,10 @@
 
 ## Supported methods
 
-| Name              |
-| :---------------- |
-| getTrackingStatus |
-| requestPermission |
+| Name              | Returns       | Type                              |
+| :---------------- | ------------- | --------------------------------- |
+| getTrackingStatus | **`Promise`** | <code>IOSAppTrackingStatus</code> |
+| requestPermission | **`Promise`** | <code>IOSAppTrackingStatus</code> |
 
 <br/>
 
@@ -53,35 +53,54 @@ npx cap sync
 <br/>
 <br/>
 
-## API
 
+## Info.plist
+##### Add this
+```xml
+<key>NSUserTrackingUsageDescription</key>
+<string>This identifier will be used to deliver personalized ads to you.</string>
+```
+
+## API Usage
 <docgen-index>
 
-- [`getTrackingStatus(...)`](#getTrackingStatus)
-- [`requestPermission(...)`](#requestPermission)
+- [`getTrackingStatus() => Promise<IOSAppTrackingStatus>)`](#getTrackingStatus)
+- [`requestPermission() => Promise<IOSAppTrackingStatus>)`](#requestPermission)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 <br/>
-<br/>
+  
+### getTrackingStatus() => Promise<IOSAppTrackingStatus>
+  
+```typescript
+import { AppTrackingTransparency } from "capacitor-ios-app-tracking";
 
-### getTrackingStatus(...)
+useEffect(() => {
+  AppTrackingTransparency.getTrackingStatus().then((status) => {
+    console.log(status);
+  });
+}, []);
 
-### requestPermission(...)
+
+```
+  
+### requestPermission() => Promise<IOSAppTrackingStatus>
 
 ```typescript
-getTrackingStatus() => Promise<IOSAppTrackingStatus>
 requestPermission() => Promise<IOSAppTrackingStatus>
+  
+import { AppTrackingTransparency } from "capacitor-ios-app-tracking";
+
+useEffect(() => {
+  AppTrackingTransparency.requestPermission().then((status) => {
+    console.log(status);
+  });
+}, []);
 ```
-
-| Returns       | Type                              |
-| ------------- | --------------------------------- |
-| **`Promise`** | <code>IOSAppTrackingStatus</code> |
-| **`Promise`** | <code>IOSAppTrackingStatus</code> |
-
-<br/>
+  
 <br/>
 
 - ### interface IOSAppTrackingPlugin
