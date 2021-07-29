@@ -89,9 +89,7 @@ useEffect(() => {
   
 ### requestPermission() => Promise<IOSAppTrackingStatus>
 
-```typescript
-requestPermission() => Promise<IOSAppTrackingStatus>
-  
+```typescript  
 import { AppTrackingTransparency } from "capacitor-ios-app-tracking";
 
 useEffect(() => {
