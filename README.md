@@ -72,7 +72,8 @@ npx cap sync
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 <br/>
-### getTrackingStatus(...)
+  
+### getTrackingStatus() => Promise<IOSAppTrackingStatus>
   
 ```typescript
 import { AppTrackingTransparency } from "capacitor-ios-app-tracking";
@@ -86,7 +87,7 @@ useEffect(() => {
 
 ```
   
-### requestPermission(...)
+### requestPermission() => Promise<IOSAppTrackingStatus>
 
 ```typescript
 requestPermission() => Promise<IOSAppTrackingStatus>
