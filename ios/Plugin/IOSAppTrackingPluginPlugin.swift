@@ -11,7 +11,7 @@ public class IOSAppTrackingPluginPlugin: CAPPlugin {
 
     @objc func getTrackingStatus(_ call: CAPPluginCall) {
         let advertising = ASIdentifierManager.init().advertisingIdentifier.uuidString
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, iOS 15.0, *) {
             let status: ATTrackingManager.AuthorizationStatus = ATTrackingManager.trackingAuthorizationStatus
             call.resolve([
                 "value": advertising, "status": status.rawValue == 0 ? "unrequested" : status.rawValue == 1 ? "restricted" : status.rawValue == 2 ? "denied" : status.rawValue == 3 ? "authorized" : ""
@@ -23,7 +23,7 @@ public class IOSAppTrackingPluginPlugin: CAPPlugin {
     }
 
     @objc func requestPermission(_ call: CAPPluginCall) {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, iOS 15.0, *) {
             ATTrackingManager.requestTrackingAuthorization { (res) in
                 let advertising = ASIdentifierManager.init().advertisingIdentifier.uuidString
                 let status = res
