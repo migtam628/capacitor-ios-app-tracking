@@ -26,7 +26,7 @@
 
 ### v0.1.1
 
-- iOS 14 App Tracking Transparency.
+- iOS 14 and iOS 15 App Tracking Transparency.
 
 ## Supported Platform:
 
