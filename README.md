@@ -17,6 +17,12 @@
 
 ## Release Note:
 
+### v1.0.5
+- Bug fixed and fully tested.
+
+### v1.0.4
+- Bug fixes.
+
 ### v1.0.3
 - Bug fixes.
 
