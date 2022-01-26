@@ -1,6 +1,6 @@
 {
   "name": "capacitor-ios-app-tracking",
-  "version": "1.0.5",
+  "version": "1.0.5rc1",
   "description": "App AD Tracking for iOS 14 and above",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

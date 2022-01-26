@@ -17,8 +17,8 @@
 
 ## Release Note:
 
-### v1.0.5
-- Bug fixed and fully tested.
+### v1.0.5rc1
+- [README updated]
 
 ### v1.0.4
 - Bug fixes.
